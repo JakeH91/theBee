@@ -8,6 +8,10 @@ body{
 }
 
 // NAVIGATION
+.nav>li>a:hover{
+	background-color: #080402;
+}
+
 nav{
 	background-color: #F4CD25;
 	display: block;
@@ -15,6 +19,21 @@ nav{
 	position: fixed;
 	top: 0;
 	left: 0;
+
+	.navbar-toggle{
+		border: 1px solid #080402;
+	}
+
+	.navbar-toggle:hover{
+		background-color: #080402;
+		.icon-bar{
+			background-color: #F4CD25;
+		}
+	}
+
+	.icon-bar{
+		background-color: #080402;
+	}
 
 	a#logo {
 		float: left;
@@ -37,7 +56,7 @@ nav{
 			padding: 15px 10px;
 			text-align: center;
 			//border-radius: 10px 10px 0 0;
-			color: #080402
+			color: #080402;
 			
 		}
 		a:hover{
