@@ -1,0 +1,80 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+th{
+	padding-right: 10px;
+}
+
+.container {
+	margin-top: 50px;
+}
+
+// PRODUCT PAGE
+
+.product-image,
+.product-name,
+.product-description {
+	margin-top: 20px;
+}
+
+.product-image {
+	border: 2px solid black;
+	width: 30%;
+	display: inline-block;
+	float: left;
+	margin-bottom: 30px;
+}
+
+.product-name,
+.product-description {
+	width: 70%;
+	display: inline-block;
+	float: left;
+	padding-left: 20px;
+}
+
+.product-options {
+	clear: both;
+}
+
+// PRODUCT LIST
+
+.product-list-item {
+	margin-bottom: 20px;
+}
+
+.product-list-image {
+	display: inline-block;
+	width: 120px;
+	height: 120px;
+	float: left;
+}
+
+.product-list-info {
+	display: inline-block;
+	float: right;
+	width: 85%;
+}
+
+@media only screen and (max-width: 1000px){
+	.product-list-info{
+		width: 75%;
+	}
+}
+
+@media only screen and (max-width: 520px){
+	.product-list-info{
+		width: 65%;
+	}
+}
+
+@media only screen and (max-width: 400px){
+	.product-list-info{
+		width: 55%;
+	}
+}
+
+.product-list-name {
+	margin-top: 0;
+}
