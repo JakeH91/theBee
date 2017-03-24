@@ -2,13 +2,28 @@
 
 <%= image_tag(@product.image_url.to_s, class: "img-responsive product-image") %>
 
-<h2 class="product-name">
-  <strong><%= @product.name %></strong> 
-</h2>
+<div class="product-info">
+	<h2 class="product-name">
+	  <strong><%= @product.name %></strong> 
+	</h2>
 
-<p class="product-description">
-  <%= @product.description %>
-</p>
+	<p class="product-description">
+	  <%= @product.description %>
+	</p>
+
+	<% if @product.color != nil %>
+		<p class="product-colour">
+			Colour: <%= @product.color %>
+		</p>
+	<% end %>
+
+	<% if @product.price != nil %>
+		<p class="product-price">
+			Price: $<%= @product.price %>
+		</p>
+	<% end %>
+</div>
+
 
 <p class="product-options">
 	<%= link_to 'Edit', edit_product_path(@product) %>|
