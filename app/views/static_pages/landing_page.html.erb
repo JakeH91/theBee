@@ -1,5 +1,28 @@
-<h2>Featured Product:</h2>
+<h1>Welcome to The Bee!</h1>
+<p>Over the last few years we have been working tirelessly to produce some of the finest and, dare I say it, loveliest woolen items the internet has to offer.</p>
+<p>From crotcheting, to knitting, to plaiting, to any-other-type-of-wool-making-technique-ing, we've tried it all. If you don't like it, you might just love it. Check out our best seller below!</p>
 
-<%= if(@featured_product != nil)
-	@featured_product.name
-	end %>
+<div class="featured-heading">
+	<h3>Favourite Product!</h3>
+</div>
+<div class="featured">
+
+	<h3 class="featured-title"><%= if(@featured_product != nil)
+		@featured_product.name
+		end %></h3>
+
+	<%= link_to image_tag(@featured_product.image_url.to_s, class: "featured-image"), @featured_product %>
+
+	<div class="featured-info">
+		<h4>Reviews:</h4>
+		<p>Here's what some nice people had to say about it:</p>
+
+		<p>"I'd been looking everywhere for a purple hat with a little green bit on top, now I finally have one!" - HappyBuyer42</p>
+
+		<p>"Within 8 minutes of pressing order, I was wearing this delightful hat! I didn't even have to get out of my chair, the drone smashed right through the window and placed it snuggly on my dome" - ConcernedForMyWindowButHappyWithMyHat934</p>
+
+		<p>"The Bee has given me so many great things over the years, but this one really <em>tops</em> them all. Get it? Tops? Like, because it's a hat?" - ConsideringCareerInStandUp</p>
+		<%= link_to 'Check it Out!', @featured_product, :class => "featured-button btn btn-primary"%>
+	</div>
+</div>
+
