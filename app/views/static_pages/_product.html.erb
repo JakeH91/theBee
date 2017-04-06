@@ -1,0 +1,15 @@
+<div class="item<%= " active" if product == Product.first %>">
+	<h3><%= product.name %></h3>
+  <%= link_to image_tag(product.image_url.to_s, class: "featured-image"), product %>
+	<div class="featured-info">
+		<h4>Reviews:</h4>
+		<p>Here's what some nice people had to say about it:</p>
+
+		<p>"I'd been looking everywhere for a purple hat with a little green bit on top, now I finally have one!" - HappyBuyer42</p>
+
+		<p>"Within 8 minutes of pressing order, I was wearing this delightful hat! I didn't even have to get out of my chair, the drone smashed right through the window and placed it snuggly on my dome" - ConcernedForMyWindowButHappyWithMyHat934</p>
+
+		<p>"The Bee has given me so many great things over the years, but this one really <em>tops</em> them all. Get it? Tops? Like, because it's a hat?" - ConsideringCareerInStandUp</p>
+		<%= link_to 'Check it Out!', @featured_product, :class => "featured-button btn btn-primary"%>
+	</div> <!-- END featured-info -->
+</div> <!-- END item -->

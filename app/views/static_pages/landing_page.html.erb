@@ -6,23 +6,28 @@
 	<h3>Favourite Product!</h3>
 </div>
 <div class="featured">
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+	  <!-- Indicators -->
+	  <ol class="carousel-indicators">
+	  	<% @products.each_with_index do |product, index| %>
+		    <li data-target="#carousel-example-generic" data-slide-to="<%= index %>"<%= ' class="active"' if product == Product.first %>></li>
+	    <% end %>
+	  </ol>
 
-	<h3 class="featured-title"><%= if(@featured_product != nil)
-		@featured_product.name
-		end %></h3>
+	  <!-- Wrapper for slides -->
+	  <div class="carousel-inner" role="listbox">
+	    <%= render partial: "product", collection: @products %>
+	  </div> <!-- END carousel-inner -->
 
-	<%= link_to image_tag(@featured_product.image_url.to_s, class: "featured-image"), @featured_product %>
-
-	<div class="featured-info">
-		<h4>Reviews:</h4>
-		<p>Here's what some nice people had to say about it:</p>
-
-		<p>"I'd been looking everywhere for a purple hat with a little green bit on top, now I finally have one!" - HappyBuyer42</p>
-
-		<p>"Within 8 minutes of pressing order, I was wearing this delightful hat! I didn't even have to get out of my chair, the drone smashed right through the window and placed it snuggly on my dome" - ConcernedForMyWindowButHappyWithMyHat934</p>
-
-		<p>"The Bee has given me so many great things over the years, but this one really <em>tops</em> them all. Get it? Tops? Like, because it's a hat?" - ConsideringCareerInStandUp</p>
-		<%= link_to 'Check it Out!', @featured_product, :class => "featured-button btn btn-primary"%>
+	  <!-- Controls -->
+	  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+	    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	    <span class="sr-only">Previous</span>
+	  </a>
+	  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+	    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	    <span class="sr-only">Next</span>
+	  </a>
 	</div>
-</div>
+</div> <!-- END featured -->
 
