@@ -45,6 +45,22 @@ nav{
 		padding-right: 30px;
 		float: right;
 	}
+
+	#nav-form {
+		display: inline-block;
+		margin-top: 13px;
+		float: left;
+		#q {
+			height: 25px;
+		}
+		.btn {
+			height: 24px;
+			padding: 0 12px;
+			background-color: #080402;
+			color: #F4CD25;
+		}
+	}
+
 	li{
 		display: inline;
 		position: relative;
