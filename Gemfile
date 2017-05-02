@@ -23,6 +23,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # Use bootstrap as framework
 gem 'bootstrap', '~> 4.0.0.alpha6'
+# Use devise for Users
+gem 'devise'
+
 
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
