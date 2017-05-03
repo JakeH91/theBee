@@ -25,6 +25,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 # Use devise for Users
 gem 'devise'
+# For Authorization
+gem 'cancancan', '~> 1.10'
 
 
 # gem 'redis', '~> 3.0'
