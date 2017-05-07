@@ -12,26 +12,29 @@ th{
 
 // PRODUCT PAGE
 
-.product-image,
-.product-info {
-	margin-top: 20px;
-}
-
 .product-image {
-	border: 2px solid black;
-	width: 30%;
+	border: 1px solid black;
+	border-radius: 4px;
+	width: 25%;
 	display: inline-block;
 	float: left;
 	margin-bottom: 30px;
 }
 
 .product-info {
-	width: 70%;
+	width: 75%;
 	display: inline-block;
 	float: left;
 	padding-left: 20px;
 }
 
+.product-reviews{
+	margin-bottom: 70px;
+	position: relative;
+	top: 30px;
+}
+
+.product-reviews,
 .product-options {
 	clear: both;
 }
