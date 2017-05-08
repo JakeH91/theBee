@@ -1,4 +1,9 @@
 $(document).on("turbolinks:load", function(){
-	console.log("Hey! from site.js");
-	$(".rating").raty( { path: '/assets', scoreName: 'comment[rating]' });
+	$(".rating").raty({ path: '/assets',
+											scoreName: 'comment[rating]' });
+	$(".rated").raty({ path: '/assets',
+										 readOnly: true,
+										 score: function(){
+										   return $(this).attr('data-score');
+										 } });
 });
