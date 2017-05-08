@@ -22,8 +22,10 @@
 	<% end %>
 </div>
 
+<div class="new-review">
+	<%= render partial: "new_comment", comment: @comment %>
+</div>
 
-<%= render partial: "new_comment", comment: @comment %>
 <%= render partial: "comments", comment: @comment %>
 <!-- <div class="product-reviews">
 	<h3>Reviews</h3>

@@ -1,3 +1,5 @@
 $(document).on("turbolinks:load", function(){
-	$(".rating").raty();
+	console.log("Hey! from site.js");
+	$(".rating").raty( { path: '/assets',
+											 scoreName: 'comment[rating]' });
 });
