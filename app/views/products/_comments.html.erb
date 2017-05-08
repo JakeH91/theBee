@@ -1,8 +1,10 @@
 <div class="product-reviews">
+	<h3>Reviews</h3>
+	<p>Haven't quite made up your mind? Here's what some helpful people had to say about this item:</p>
 	<% @comments.each do |comment| %>
 		<div class="row">
 			<hr>
-			<p><%= comment.user.first_name %> <small><em><% "#{time_ago_in_words(comment.created_at)} ago" %></em></small></p>
+			<p><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small></p>
 			<p><%= "Rating: #{comment.rating}/5" %></p>
 			<p><%= comment.body %></p>
 		</div>
