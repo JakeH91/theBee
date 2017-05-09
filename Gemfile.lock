@@ -42,9 +42,8 @@ GEM
     autoprefixer-rails (6.7.7)
       execjs
     bcrypt (3.1.11)
-    bootstrap (4.0.0.alpha6)
-      autoprefixer-rails (>= 6.0.3)
-      sass (>= 3.4.19)
+    bootstrap-sass (3.2.0.2)
+      sass (~> 3.2)
     builder (3.2.3)
     byebug (9.0.6)
     cancancan (1.16.0)
@@ -177,7 +176,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap (~> 4.0.0.alpha6)
+  autoprefixer-rails
+  bootstrap-sass (~> 3.2.0)
   byebug
   cancancan (~> 1.10)
   coffee-rails (~> 4.2)
