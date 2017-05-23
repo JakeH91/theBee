@@ -6,9 +6,11 @@
 		<p>Here's what some nice people had to say about it:</p>
 
 		<div class="reviews">
-			<% product.reviews.each	do |review| %>
-				<p class="review">"<%= review.review %>"</p>
-				<p class="review-user">- <%= User.find(review.user_id).first_name %></p>
+			<% product.comments.reverse.each_with_index	do |comment, index| %>
+				<% if index < 3 %>
+					<p class="review">"<%= comment.body %>"</p>
+					<p class="review-user">- <%= comment.user.first_name %></p>
+				<% end %>
 			<% end %>
 		</div>
 		
