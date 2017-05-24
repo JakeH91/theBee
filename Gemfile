@@ -34,6 +34,9 @@ gem 'cancancan', '~> 1.10'
 ## Gemfile for Rails 3+, Sinatra, and Merb
 gem 'will_paginate', '~> 3.1.0'
 
+# rspec functional testing
+gem 'rails-controller-testing'
+
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
