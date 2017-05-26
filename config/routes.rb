@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'static_pages/contact'
   get 'static_pages/index'
   post 'static_pages/thank_you'
-
+  post 'payments/create'
   root 'static_pages#landing_page'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
