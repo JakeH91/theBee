@@ -5,11 +5,11 @@ class ProductMailer < ApplicationMailer
   #
   #   en.product_mailer.payment_successful.subject
   #
-  def payment_successful(product, user)
+  def payment_successful(product, email)
   	@product = product
-  	@user = user
+  	@email = email
 
-    mail to: @user.email,
+    mail to: @email,
     		 subject: "Order Successful"
   end
 end
