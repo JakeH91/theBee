@@ -12,4 +12,12 @@ class ProductMailer < ApplicationMailer
     mail to: @email,
     		 subject: "Order Successful"
   end
+
+  def order_received(product, user)
+  	@product = product
+  	@user = user
+
+  	mail to: 'jake_hill666@hotmail.co.uk',
+  			 subject: "Order for #{@product.name}"
+  end
 end

@@ -26,6 +26,7 @@ class PaymentsController < ApplicationController
     	flash[:error] = "Unfortunately, there was an error processing your payment: #{err[:message]}"
   	end
     ProductMailer.payment_successful(@product, @email).deliver_now
+    ProductMailer.order_received(@product, @user).deliver_now
   	render "payments/create"
 	end
 end
