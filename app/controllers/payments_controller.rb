@@ -24,7 +24,7 @@ class PaymentsController < ApplicationController
     	err = body[:error]
     	flash[:error] = "Unfortunately, there was an error processing your payment: #{err[:message]}"
   	end
-
-  	redirect_to product_path(@product)
+    ProductMailer.payment_successful(@product, @user).deliver_now
+  	render "payments/create"
 	end
 end
