@@ -6,7 +6,12 @@ class ProductsController < ApplicationController
   def index
     if params[:q]
       search_term = params[:q]
-      @products = Product.search(search_term)
+      logger.debug "Searching for #{search_term}"
+      @products = Product.search(search_term).paginate(:page => params[:page], :per_page => 10)
+      logger.debug "Search Results: #{@products.length}"
+      @products.each_with_index do |product, index|
+        logger.debug "Result #{index + 1}: #{product.name}"
+      end
     else  
       @products = Product.paginate(:page => params[:page], :per_page => 10)
     end
