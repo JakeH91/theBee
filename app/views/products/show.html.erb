@@ -2,7 +2,7 @@
   <strong><%= @product.name %></strong> 
 </h2>
 	
-<%= image_tag(@product.image_url.to_s, class: "img-responsive product-image") %>
+<%= image_tag(@product.image_url.to_s, class: "img-responsive product-image img-zoom", data_zoom_image: "#{image_path(@product.image_url.to_s)}") %>
 
 <div class="product-info">	
 	<p class="product-description">
