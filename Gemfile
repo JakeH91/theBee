@@ -31,6 +31,9 @@ gem 'devise'
 # For Authorization
 gem 'cancancan', '~> 1.10'
 
+# For Caching
+gem 'dalli'
+
 # Security
 gem "brakeman", :require => false
 

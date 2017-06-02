@@ -1,21 +1,22 @@
-<% logger.debug "Product: #{product.name}" %>
-<div class="product-list-item">
-  <%= link_to image_tag(product.image_url.to_s, class: "product-list-image"), product %>
-  <div class="product-list-info">
-    <h3 class="product-list-name"><%= link_to product.name, product %></h3>
-    <p><%= product.description %></p>
-    <% if product.color != nil %>
-      <p>Colour: <%= product.color %></p>
-    <% end %>
-    <% if product.price != nil %>
-      <p>Price: $<%= product.price %></p>
-    <% end %>
+<% cache product do %>
+  <div class="product-list-item">
+    <%= link_to image_tag(product.image_url.to_s, class: "product-list-image"), product %>
+    <div class="product-list-info">
+      <h3 class="product-list-name"><%= link_to product.name, product %></h3>
+      <p><%= product.description %></p>
+      <% if product.color != nil %>
+        <p>Colour: <%= product.color %></p>
+      <% end %>
+      <% if product.price != nil %>
+        <p>Price: $<%= product.price %></p>
+      <% end %>
+    </div>
+    <div class="product-options">
+      <%= link_to 'Show', product %>
+      <%= link_to 'Edit', edit_product_path(product) %>
+      <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+   
+    <hr>
   </div>
-  <div class="product-options">
-    <%= link_to 'Show', product %>
-    <%= link_to 'Edit', edit_product_path(product) %>
-    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </div>
- 
-  <hr>
-</div> 
+<% end %>

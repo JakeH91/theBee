@@ -1,3 +1,4 @@
+<% cache @product do %>
 <h2 class="product-name">
   <strong><%= @product.name %></strong> 
 </h2>
@@ -9,17 +10,12 @@
 	  <%= @product.description %>
 	</p>
 
-	<%# if @product.color != nil %>
-		<!-- <p class="product-colour">
-			Colour: <%= @product.color %>
-		</p> -->
-	<%# end %>
-
 	<% if @product.price != nil %>
 		<p class="product-price">
 			Price: $<%= @product.price %>
 		</p>
 	<% end %>
+<% end %>
 
 	<p>Average Rating:
 	<div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div>

@@ -1,6 +1,8 @@
 <h1>Products</h1>
 
-<%= render @products %>
+<% cache(cache_key_for_products) do %>
+	<%= render @products %>
+<% end %>
 <%= will_paginate @products %>
 <br>
 
