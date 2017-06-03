@@ -31,6 +31,8 @@ gem 'devise'
 # For Authorization
 gem 'cancancan', '~> 1.10'
 
+gem 'redis-rails'
+
 # For Caching
 gem 'dalli'
 
