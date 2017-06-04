@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
   resources :orders, only: [:index, :show, :create, :destroy]
 
+  mount ActionCable.server => '/cable'
   get 'static_pages/about'
   get 'static_pages/contact'
   get 'static_pages/index'

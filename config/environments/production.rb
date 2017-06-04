@@ -112,5 +112,8 @@ Rails.application.configure do
                      :down_retry_delay => 60
                     }
 
+
+  config.web_socket_server_url = "wss://thebee.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://thebee.herokuapp.com', 'http://thebee.herokuapp.com']
 end
 
