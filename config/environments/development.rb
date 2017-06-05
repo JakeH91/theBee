@@ -17,7 +17,7 @@ Rails.application.configure do
     config.action_controller.perform_caching = true
 
 
-    config.cache_store = :redis_store, 'redis://localhost:6379/0/cache'
+    #config.cache_store = :redis_store, 'redis://localhost:6379/0/cache'
     config.public_file_server.headers = {
       'Cache-Control' => 'public, max-age=172800'
     }
