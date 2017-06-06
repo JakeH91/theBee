@@ -1,6 +1,7 @@
 <div class="product-reviews">
 	<h3>Reviews</h3>
 	<p>Haven't quite made up your mind? Here's what some helpful people had to say about this item:</p>
+	<div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
 	<div class="reviews">
 		<%= render partial: "comments/comment", collection: @comments %>			
 	</div>

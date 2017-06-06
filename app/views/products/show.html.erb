@@ -5,7 +5,7 @@
 	
 <%= image_tag(@product.image_url.to_s, class: "img-responsive product-image img-zoom", data_zoom_image: "#{image_path(@product.image_url.to_s)}") %>
 
-<div class="product-info">	
+<div class="product-info" data-product-id="<%= @product.id %>">	
 	<p class="product-description">
 	  <%= @product.description %>
 	</p>
@@ -31,7 +31,6 @@
 	<%= render partial: "new_comment", comment: @comment %>
 </div>
 
-<div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
 <%= render partial: "comments", comment: @comment %>
 
 <p class="product-options">
