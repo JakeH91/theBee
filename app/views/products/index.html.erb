@@ -1,8 +1,13 @@
 <h1>Products</h1>
-
-<% cache(cache_key_for_products) do %>
+<% if !params[:q] %>
+	<% cache(cache_key_for_products) do %>
+		<%= render @products %>
+	<% end %>
+<% else %>
+	<% Rails.cache.clear %>
 	<%= render @products %>
 <% end %>
+
 <%= will_paginate @products %>
 <br>
 
