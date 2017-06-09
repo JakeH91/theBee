@@ -17,7 +17,12 @@ class CommentsController < ApplicationController
 		end
 	end
 
+	def edit
+		authorize! :update, Comment
+	end
+
 	def destroy
+		authorize! :destroy, Comment
 		@comment = Comment.find(params[:id])
 		product = @comment.product
 		@comment.destroy
