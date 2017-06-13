@@ -1,6 +1,12 @@
 require "rails_helper"
 
 describe Product do
+	context "when making new product" do
+		it "is invalid without name" do
+			expect(Product.new(description: "Very lovely little hat")).not_to be_valid
+		end
+	end
+
 	context "when the product has comments" do
 		before do
 			@product = Product.create!(name: "Race Bike")
@@ -14,9 +20,11 @@ describe Product do
 			expect(@product.average_rating).to eq 3
 		end
 
-		it "is not valid" do
-			expect(Product.new(description: "Very lovely little hat")).not_to be_valid
-		end
+#		it "is not valid" do
+#			expect(Product.new(description: "Very lovely little hat")).not_to be_valid
+#		end
 	end
+
+	
 end
 
