@@ -11,12 +11,15 @@
         <p>Price: $<%= product.price %></p>
       <% end %>
     </div>
+    
     <div class="product-options">
-      <%= link_to 'Show', product %>
-      <%= link_to 'Edit', edit_product_path(product) %>
-      <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% if can? :manage, @product %>
+        <%= link_to 'Show', product %>
+        <%= link_to 'Edit', edit_product_path(product) %>
+        <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
     </div>
-   
+    
     <hr>
   </div>
 <% end %>
