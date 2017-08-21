@@ -8,6 +8,7 @@ class Ability
     can :read, :all
     if user.admin?
     	can :manage, :all
+      can :destroy, Product
     end
   end
 end
