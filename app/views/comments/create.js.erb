@@ -1,3 +1,5 @@
-$("#new_comment").html("Thank you for your review!");
+$("#comment_body").val('');
+$("#comment_body").attr('placeholder', 'Thanks for your comment!');
+$('.reviews').prepend("<%= j render @comment %>");
 $("#average-rating").attr("data-score", "<%= @product.average_rating %>");
 refreshRating();
