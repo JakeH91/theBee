@@ -20,9 +20,6 @@ describe Product do
 			expect(@product.average_rating).to eq 3
 		end
 
-#		it "is not valid" do
-#			expect(Product.new(description: "Very lovely little hat")).not_to be_valid
-#		end
 	end
 
 	
