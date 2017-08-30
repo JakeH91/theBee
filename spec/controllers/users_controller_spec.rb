@@ -7,7 +7,7 @@ describe UsersController, type: :controller do
 		@otherUser = FactoryGirl.create(:admin)
 	end
 
-	describe 'GET #show' do
+	context 'GET #show' do
 		context "User is logged in" do
 			before do
 				sign_in @user
@@ -18,17 +18,16 @@ describe UsersController, type: :controller do
 				expect(assigns(:user)).to eq @user
 			end
 
-			it 'does not load other users details' do
+			it 'loads other users details' do
 				get :show, params: { id: @otherUser.id }
-				expect(response).to have_http_status(302)
-				expect(response).to redirect_to(root_path)
+				expect(response).to have_http_status(200)
 			end
 		end
 
 		context "No user is logged in" do
-			it 'redirects to homepage' do
+			it 'redirects to login page' do
 				get :show, params: { id: @user.id }
-				expect(response).to redirect_to(root_path)
+				expect(response).to redirect_to(new_user_session_path)
 			end
 		end
 	end
